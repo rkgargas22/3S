@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "08fff045-6990-4daa-a38e-18e1e832afdc",
+		"name": "CC2.8 TMFL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get JWT Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Correlation-Id",
+						"value": "{{$guid}}",
+						"type": "text"
+					},
+					{
+						"key": "x-user-domain",
+						"value": "tmf.co.in",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"\",\r\n    \"password\": \"\",\r\n    \"client_id\": \"TW1dzS3ebdvJxjyNq3l5FViaBwbtb3HF\",\r\n    \"client_secret\": \"d4cmpjAiOAfqy3Zd\"\r\n}"
+				},
+				"url": {
+					"raw": "https://in-api.experian.com/auth/experianone/v1/token",
+					"protocol": "https",
+					"host": [
+						"in-api",
+						"experian",
+						"com"
+					],
+					"path": [
+						"auth",
+						"experianone",
+						"v1",
+						"token"
+					]
+				},
+				"description": "INUAT"
+			},
+			"response": []
+		},
+		{
+			"name": "APIGEE-SANDBOX-HunterOnly",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJJSmpTMXJQQjdJODBHWjgybmNsSlZPQkF3V3B3ZTVYblNKZUdSZHdpcEY5IiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJudXB1ci5rb3RoYXJpQHRtZi5jby5pbiIsIkVtYWlsIjpudWxsLCJGaXJzdE5hbWUiOm51bGwsImlzcyI6IkVYUEVSSUFOIiwiTGFzdE5hbWUiOm51bGwsImV4cCI6MTY3NjYzMTQ3OSwiaWF0IjoxNjc2NjI5Njc5LCJqdGkiOiJhY2ZjOTdhOS1iY2RiLTRjNGYtOTlmNi1kZDE4YzNjNTk5MmYifQ.WBG4X2oOZIUa-KiTcIUNzky7sPnqhN2VSHb_3APfuv95fGe_juaJ9oH-NK1US6zTPwJIFxZ9CHRW_q8nFk1oOgz2-YVivNOcPwcneZG8tZuFR09cKZP-BqqBb8sNyS7886KA5aaX7kDcogrVH9xc4OCqyvkHSss5_b59jAO-qQu5hOlC85ZYLNM1sW3ZPNWjsxFNPJJYQeVlHdOe18EDz7023t_dmdrY0r4Jp6L4GqkdbOK9XXSvVsQJthGZDnfRtqfKbscJHsTsVHT7nAJsWG13zGJBp2tnq46sfPS3gYJ48ddl3DhgUZRlur4AqfWO3kArXjgpZ6IAbAoLeMADCw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Correlation-Id",
+						"value": "{{$guid}}",
+						"type": "text"
+					},
+					{
+						"key": "x-user-domain",
+						"value": "crosscore-in-sit.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"header\": {\r\n\t\t\"tenantId\": \"3987486471cd4376809b3f2fe2eee4\",\r\n\t\t\"requestType\": \"HunterOnly\",\r\n\t\t\"clientReferenceId\": \"UAT-001\",\r\n\t\t\"expRequestId\": \"\",\r\n\t\t\"messageTime\": \"2023-02-14T05:32:35Z\",\r\n\t\t\"txnId\": \"\",\r\n\t\t\"time\": \"\",\r\n\t\t\"options\": {}\r\n\t},\r\n\t\"payload\": {\r\n\t\t\"contacts\": [\r\n\t\t\t{\r\n\t\t\t\t\"telephones\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"type\": \"MOBILE\",\r\n\t\t\t\t\t\t\"number\": \"9711160867\",\r\n\t\t\t\t\t\t\"id\": \"APPLICANT_1_TEL_1\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"person\": {\r\n\t\t\t\t\t\"personDetails\": {\r\n\t\t\t\t\t\t\"qualificationType\": \"DEGREE\",\r\n\t\t\t\t\t\t\"maritalStatus\": \"MARRIED\",\r\n\t\t\t\t\t\t\"gender\": \"MALE\",\r\n\t\t\t\t\t\t\"age\": 30\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"names\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"type\": \"CURRENT\",\r\n\t\t\t\t\t\t\t\"surName\": \"kumar\",\r\n\t\t\t\t\t\t\t\"id\": \"APPLICANT_NAME_1\",\r\n\t\t\t\t\t\t\t\"firstName\": \"Vinod\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t],\r\n\t\t\t\t\t\"id\": \"Person_1\"\r\n\t\t\t\t},\r\n\t\t\t\t\"identityDocuments\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"id\": \"ID_1\",\r\n\t\t\t\t\t\t\"documentType\": \"PAN CARD\",\r\n\t\t\t\t\t\t\"documentNumber\": \"BGGPK7680B\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"id\": \"0038p000001YEG1AAO\",\r\n\t\t\t\t\"employmentHistory\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"timeWithEmployer\": {\r\n\t\t\t\t\t\t\t\"unit\": \"MONTHS\",\r\n\t\t\t\t\t\t\t\"duration\": 108\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"id\": \"MAINEMPLOYER\",\r\n\t\t\t\t\t\t\"employerName\": \"0018p000001pimIAAQ\",\r\n\t\t\t\t\t\t\"employerAddress\": {\r\n\t\t\t\t\t\t\t\"street2\": \".\",\r\n\t\t\t\t\t\t\t\"street\": \"-\",\r\n\t\t\t\t\t\t\t\"countryCode\": \"India\",\r\n\t\t\t\t\t\t\t\"buildingName\": \"estate Espire Building badarpur Delhi \",\r\n\t\t\t\t\t\t\t\"addressType\": \"CURRENT\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"emails\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"type\": \"HOME\",\r\n\t\t\t\t\t\t\"id\": \"APPLICANT_1_EMAIL_1\",\r\n\t\t\t\t\t\t\"email\": \"vinodsha56@gmail.com\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"addresses\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"timeAtAddress\": {\r\n\t\t\t\t\t\t\t\"value\": \"360\",\r\n\t\t\t\t\t\t\t\"unit\": \"YEAR\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"street2\": \"h.no-105 rajiv colony ballabgrah\",\r\n\t\t\t\t\t\t\"street\": \"h.no-105 rajiv colony ballabgrah\",\r\n\t\t\t\t\t\t\"stateProvinceCode\": \"HR\",\r\n\t\t\t\t\t\t\"postTown\": \"Fari1375\",\r\n\t\t\t\t\t\t\"postal\": \"121004\",\r\n\t\t\t\t\t\t\"id\": \"ADDRESS_1\",\r\n\t\t\t\t\t\t\"county\": \"India\",\r\n\t\t\t\t\t\t\"buildingName\": \"faridabad\",\r\n\t\t\t\t\t\t\"addressType\": \"PRIMARY\"\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"application\": {\r\n\t\t\t\"productDetails\": {\r\n\t\t\t\t\"productType\": \"LOAN\",\r\n\t\t\t\t\"productCode\": \"FL_I_ES\"\r\n\t\t\t},\r\n\t\t\t\"originalRequestTime\": \"2021-04-24T10:01:42Z\",\r\n\t\t\t\"notificationRequired\": true,\r\n\t\t\t\"applicants\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"id\": \"a028p000000V436AAC\",\r\n\t\t\t\t\t\"contactId\": \"0038p000001YEG1AAO\",\r\n\t\t\t\t\t\"applicantType\": \"MAIN_APPLICANT\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}\r\n}"
+				},
+				"url": {
+					"raw": "https://in-api.experian.com/decisionanalytics/crosscore/npzrfjhuuaqv/services/v0/applications/3",
+					"protocol": "https",
+					"host": [
+						"in-api",
+						"experian",
+						"com"
+					],
+					"path": [
+						"decisionanalytics",
+						"crosscore",
+						"npzrfjhuuaqv",
+						"services",
+						"v0",
+						"applications",
+						"3"
+					]
+				},
+				"description": "INUAT"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJraWQiOiJISmpTMXJQQjdJODBHWjgybmNsSlZPQkF3V3B3ZTVYblNKZUdSZHdpcEY4IiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJwYXJhbWVzaC5wZXJ1Z3VAY3Jvc3Njb3JlLWluLXNpdC5jb20iLCJFbWFpbCI6bnVsbCwiRmlyc3ROYW1lIjpudWxsLCJpc3MiOiJFWFBFUklBTiIsIkxhc3ROYW1lIjpudWxsLCJleHAiOjE2MTU5NzQyNTYsImlhdCI6MTYxNTk3MjQ1NiwianRpIjoiZGIxZDM3N2UtMDNlMS00MTc5LWJlYjctYzVjNjI1MGFhYzRhIn0.TlC-EBSpekb5kZsf4azZPu-CYW8LKzFSd5x9JoKcnEOg6tIQ4cMS8EntjRLw0MNq4dk1u8v-BAPTZgmnOuUyDOMDQwqH34WqJCH1RQXf1urc8hgMxSUmrUsZKr9q4gdIQXr5XLOaxFb72nNooy-cDX86Fl9qMUhxqwUOxGWG5j25kgC_iOy7gHeJ3nlqchMWRsyMSIMmGkuSDAYnZllEoPcxVHd0NWu-x7Vjg29mXW5PY3yAW5vogCONxBTxRsfYGI_xytWh6jKMQIthkH8t__EYfH1RxnT8OMIknBZsdiEaAFJ5Xdoe2UsvhzsMWtBjwFikL1gVDmIrM1Y_7cP_aQ",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
